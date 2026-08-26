@@ -1,0 +1,19 @@
+<div class="contenedor">
+  <h1>Rick and Morty</h1>
+
+  <ul class="grid">
+    @for (personaje of personajes(); track personaje.id) {
+      <li class="tarjeta">
+        <img [src]="personaje.image" [alt]="personaje.name" />
+        <div class="info">
+          <h3>{{ personaje.name }}</h3>
+          <p class="estado">
+            <span class="punto" [class]="personaje.status.toLowerCase()"></span>
+            {{ personaje.status }} - {{ personaje.species }}
+          </p>
+          <button class="btn-eliminar" (click)="eliminar(personaje)">Eliminar</button>
+        </div>
+      </li>
+    }
+  </ul>
+</div>
